@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | MIO Café</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <h2>MIO.</h2>
+
+            <div>
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="about.html">About Us</a>
+                <a href="cart.html">
+                    Cart <span id="cart-count" class="cart-count"></span>
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="menu-page">
+        <h1>Our Menu</h1>
+        <p>Something lovely for every moment.</p>
+
+        <h2>Drinks</h2>
+
+        <div class="menu-grid">
+
+            <div class="menu-card">
+                <img src="images/black_coffee.jpg" alt="Black Coffee">
+                <h3>Black Coffee</h3>
+                <p>12 SAR</p>
+                <button onclick="openCustomize('Black Coffee', 12)">Customize</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/matcha.jpg" alt="Matcha Latte">
+                <h3>Matcha Latte</h3>
+                <p>18 SAR</p>
+                <button onclick="openCustomize('Matcha Latte', 18)">Customize</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/espresso.jpg" alt="Espresso">
+                <h3>Espresso</h3>
+                <p>10 SAR</p>
+                <button onclick="openCustomize('Espresso', 10)">Customize</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/berain.jpg" alt="Berain Water">
+                <h3>Berain Water</h3>
+                <p>2 SAR</p>
+                <button onclick="addToCart('Berain Water', 2)">Add to Cart</button>
+            </div>
+
+        </div>
+
+        <h2>Desserts & Bakery</h2>
+
+        <div class="menu-grid">
+
+            <div class="menu-card">
+                <img src="images/cookies.jpg" alt="Cookies">
+                <h3>Cookies</h3>
+                <p>12 SAR</p>
+                <button onclick="addToCart('Cookies', 12)">Add to Cart</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/cinnamon_roll.jpg" alt="Cinnamon Roll">
+                <h3>Cinnamon Roll</h3>
+                <p>16 SAR</p>
+                <button onclick="addToCart('Cinnamon Roll', 16)">Add to Cart</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/granola_bowl.jpg" alt="Granola Bowl">
+                <h3>Granola Bowl</h3>
+                <p>22 SAR</p>
+                <button onclick="addToCart('Granola Bowl', 22)">Add to Cart</button>
+            </div>
+
+            <div class="menu-card">
+                <img src="images/chocolate_fudge_cake.jpg" alt="Chocolate Fudge Cake">
+                <h3>Chocolate Fudge Cake</h3>
+                <p>24 SAR</p>
+                <button onclick="addToCart('Chocolate Fudge Cake', 24)">Add to Cart</button>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="cart-popup" class="cart-popup">
+        <div class="popup-content">
+            <h2>✓ Added to Cart!</h2>
+            <p id="added-product"></p>
+            <button onclick="closeCartMessage()">Continue Shopping</button>
+        </div>
+    </div>
+
+    <!-- Drink Customization Popup -->
+    <div id="customize-popup" class="cart-popup">
+        <div class="popup-content customize-content">
+
+            <h2 id="customize-title">Customize Your Drink</h2>
+
+            <div id="customize-options"></div>
+
+            <h3 id="customize-price">Total: 0 SAR</h3>
+
+            <button onclick="addCustomizedDrink()">
+                Add to Cart
+            </button>
+
+            <button class="cancel-button" onclick="closeCustomize()">
+                Cancel
+            </button>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
